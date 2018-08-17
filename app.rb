@@ -2,10 +2,20 @@ require_relative 'config/environment'
 
 class App < Sinatra::Base
 
-  get '/food_form' do
-    erb :food_form
+  get '/' do
+    erb :fortune
   end
-
-  # Add your post route and action below
-
+  
+post  "/results" do 
+    @name = params[:name]
+    @sign = params[:sign]
+    @been_before = params[:been_before]
+    
+    erb :results
+    
+    
+  end
+  post "/choice_2" do 
+    erb :choice_2
+  end 
 end
